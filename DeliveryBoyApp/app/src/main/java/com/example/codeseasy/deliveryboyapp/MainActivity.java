@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -87,9 +88,24 @@ public class MainActivity extends AppCompatActivity {
         buttonLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ViewLocation.class);
-                intent.putExtra("lat", latitude);
-                intent.putExtra("long", longitude);
+//                Intent intent = new Intent(getApplicationContext(), ViewLocation.class);
+//                intent.putExtra("lat", latitude);
+//                intent.putExtra("long", longitude);
+//                startActivity(intent);
+                Bundle bundle = getIntent().getExtras();
+
+                // nuestra ubicacion
+                String origin_lon = "-88.0151225";
+                String origin_lat = "15.5474926";
+
+                System.out.println("$$$$$ latitude: " + latitude);
+                System.out.println("$$$$$ longitude: " + longitude);
+
+                Uri uri = Uri.parse("https://www.google.com/maps/dir/" + origin_lat + "," + origin_lon + "/"
+                        + latitude + "," + longitude);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                intent.setPackage("com.google.android.apps.maps");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         });
