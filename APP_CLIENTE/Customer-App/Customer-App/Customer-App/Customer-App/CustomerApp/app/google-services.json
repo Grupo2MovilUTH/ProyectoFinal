@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "235027355466",
+    "project_id": "customer-app-4b2ab",
+    "storage_bucket": "customer-app-4b2ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235027355466:android:cd62e34b36cf3f60ab53b3",
+        "android_client_info": {
+          "package_name": "com.example.codeseasy.com.customerapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtIseLHVQJ3UrC91trOMe4325_nDfTD94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
